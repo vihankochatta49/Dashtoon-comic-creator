@@ -9,7 +9,7 @@
       referrerpolicy="no-referrer"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog site</title>
+    <title>Doshtoon Comic Creator</title>
     <style>
       * {
         margin: 0px;
@@ -17,9 +17,19 @@
       }
 
       body {
-        background-image: url("https://cdn1.photostockeditor.com/c/2812/black-white-pencil-on-black-platform-background-background-image.jpg");
-        background-size: cover;
+        background-color: black;
         font-family: sans-serif;
+      }
+
+      button {
+        border: none;
+      }
+
+      .comicgrid {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        flex-direction: column;
       }
 
       .nav {
@@ -27,20 +37,40 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        box-shadow: 15px 2px 2px gold;
+        box-shadow: 15px 2px 2px white;
+        border-bottom: 3px solid black;
+        background-color: rgba(0,0,0,0.7);
         padding: 10px;
         height: 50px;
       }
 
-      button {
-        border: none;
+      .imgContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-height: 250px; 
+        max-width: 250px; 
+        border: 2px solid white;
+      }
+
+      .imgContainer img {
+        height: auto;
+        width: auto;
+      }
+      .intro {
+          display:  flex;
+          flex-direction: column;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+          background-color: rgba(0,0,0,0.7);
       }
 
       .head {
         font-size: 2.2rem;
         color: #fff;
         font-weight: 600;
-        font-family: monospace;
+        font-family: cursive;
         margin-left: 15px;
       }
 
@@ -50,23 +80,21 @@
       }
 
       .profile {
-        color: gold;
+        color: #fff;
         text-decoration: none;
-        font-size: 2.2rem;
-        margin-left: 10px;
+        font-size: 1.5rem;
+        margin-left: 30px;
       }
 
       .profile:hover {
         color: #7a7893;
       }
 
-      .half {
-        display: flex;
-      }
-
       .blogs {
         display: grid;
-        grid-template-columns: auto;
+        grid-template-columns: repeat(5,auto);
+        grid-template-rows: repeat(2,auto);
+        row-gap: 15px;
         align-content: start;
         justify-content: center;
         flex-direction: column;
@@ -74,131 +102,50 @@
         margin: 0px 25px;
       }
 
-      .bai {
-        position: relative;
-        min-width: 600px;
-        max-width: 800px;
-        background-color: rgba(0,0,0,0.7);
-        padding: 15px;
-        margin-top: 25px;
-        border: 2px solid gold;
-        border-radius: 10px;
-        box-sizing: border-box;
-        box-shadow: 0 15px 35px rgb(50 50 93 / 10%), 0 5px 15px rgb(0 0 0 / 7%) !important;
+       
+      .comicblock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .textForm {
+        margin: 5px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .textForm input {
+        border: 1px solid white;
+        border-radius: 5px;
+        padding: 3px;
+        background-color: #0000007d;
+        font-family: cursive;
+        font-size: 0.8rem;
+        color: white;
+      }
+
+      .textForm button {
+        border-radius: 5px;
+        border: 1px solid white;
+        background-color: #0000007d;
+        color: #53f12c;
+        padding: 3px;
+        font-family: cursive;
+        font-size: 0.8rem;  
+        margin-top: 5px;
+      }
+
+      .textForm button:hover {
+        color: white;
+        background-color: #53f12c;
       }
 
       img {
         max-width: 100%;
-      }
-
-      .protfolio {
-        max-width: 100%;
-        width: 300px;
-        font-size: 1.2rem;
-        height: fit-content;
-        margin-left: 50px;
-        margin-right: 15px;
-        margin-top: 35px;
-        background-color: rgba(255,255,255,0.9);
-        border: 3px solid gold;
-        border-radius: 10px;
-        box-shadow: 0 15px 35px rgb(50 50 93 / 10%), 0 5px 15px rgb(0 0 0 / 7%) !important;
-        line-height: 1.8;
-        padding: 15px;
-      }
-
-      .protfolio a {
-        background-color: white;
-      }
-
-      .protfolio a:hover {
-        background-color: rgb(255 255 255 / 80%);
-      }
-
-      .blog {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        /* align-items: start; */
-      }
-
-      .written-by {
-        display: flex;
-        font-size: 14px;
-        align-items: center;
-        margin-bottom: 15px;
-        font-family: monospace;
-        font-weight: 600;
-        text-decoration: none;
-        color: gold;
-      }
-
-      .written-by:hover{
-        color: white;
-      }
-
-      .head1 {
-        width: 85%;
-        margin-bottom: 10px;
-        color: white;
-        font-size: 1.8em;
-        word-spacing: -5px;
-        font-family: monospace;
-        text-decoration: none;
-        font-weight: 600;
-      }
-
-      .head1:hover {
-        color: gold;
-        text-decoration: underline;
-      }
-
-      .date {
-        color: white;
-        margin: 3px 0px 8px;
-        font-size: 0.7rem;
-      }
-
-      .para {
-        color: white;
-        font-size: 1.2em;
-        margin: 10px 0px;
-      }
-
-      .like {
-        font-size: 1rem;
-        margin-top: 10px;
-        color: wheat;
-      }
-
-      .btns {
-        margin-top: 10px;
-        display: flex;
-      }
-
-      .btn {
-        margin: 5px 0px 0px -1px;
-        background-color: white;
-        border: 2px solid white;
-        border-radius: 8px;
-        cursor: pointer;
-      }
-
-      .like-btn {
-        color: gold;
-        font-size: 1.5rem;
-        background-color:black;
-        cursor: pointer;
-      }
-
-      .like-btn:hover {
-        color: #4267b2;
-      }
-
-      .msg {
-        color: green;
-        font-size: 1.2em;
-        margin-top: 10px;
       }
 
       @media screen and (max-width: 800px) {
@@ -207,178 +154,304 @@
         }
 
         .head {
-          font-size: 2rem;
-          margin-left: 0px;
+          font-size: 1rem;
+          margin-left: 5px;
         }
 
-        .blogs {
-          padding: 10px 10px 20px;
-          width: auto;
-        }
-
-        .bai {
-          padding: 15px 10px;
-          max-width: 100%;
-          min-width: 300px;
-        }
-
-        .blog {
-          max-width: 100%;
+        .comicgrid {
+          display: block;
+          position: fixed;
+          overflow: scroll;
+          height: 100%;
           width: 100%;
-          flex-direction: column;
+          margin: auto;
         }
 
-        .blog img {
-          margin: auto !important;
-          padding: 10px;
+        .profile {
+          font-size: 1rem;
+          margin-right: 5px !important;
+          margin-left: 0px !important;
         }
 
-        .protfolio {
-          display: none;
+         #profile {
+             display: none;
+         }
+
+         .intro {
+             text-align: center;
+         }
+        .blogs {
+          grid-template-columns: auto;
+          grid-template-rows: repeat(10,auto);
         }
       }
     </style>
   </head>
 
   <body>
-    <nav class="nav">
-      <h1 class="head">Blog site</h1>
-      <div class="dropdown" style="margin-right: 15px">
-        <a class="profile" href="/<%= profile.slugName %>"
-          ><i class="far fa-user"></i
-        ></a>
-      </div>
-    </nav>
-
-    <section
-      style="display: flex; justify-content: center;"
-    >
+    <section class="top">
+      <nav class="nav" id='nav'>
+        <h1 class="head">Dashtoon Comic Creator</h1>
+      </nav>
+      <div class="comicgrid">
       <div class="blogs">
-        <!-- all articles -->
-
-        <% blogs.forEach(function (e) { %>
-        <div class="bai">
-          <!-- single article -->
-          <div class="blog">
-            <div
-              style="
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-              "
-            >
-              <!--author name-->
-              <div>
-                <a href="/users/profile/<%= e.slugName %>" class="written-by">
-                  <i
-                    class="far fa-user"
-                    style="margin-right: 5px; font-size: 18px"
-                  ></i>
-                  <%= e.name %>
-                </a>
-                <!-- title -->
-                <a
-                  href="/readMore/<%= e.slug %>/<%= e.blogNumber %>"
-                  class="head1"
-                  ><%= e.title %></a
-                >
-
-                <!-- description -->
-                <p class="para"><%= e.description %></p>
-
-                <!-- date -->
-                <p class="date"><%= e.createdAt %> <a style='margin-left: 5px; font-size: 1.2em; text-decoration: none; color: gray;' href="/readMore/<%= e.slug %>/<%= e.blogNumber %>">read more</a></p>
-              </div>
-
-             <!-- no. of likes -->
-            <p class="like">
-              <i class="far fa-thumbs-up"></i> <span id="<%= e.id%>"><%=e.likes%></span> 
-            </p>
-
+        <% for(var i =0; i <10; i++){ %>
+          <div class="comicblock">
+            <div id="imageContainer<%=i%>" class="imgContainer"><p style="color: white; padding: 5px;">Image will appear here, it may take  30 to 60 seconds</p></div>
+            <form id="textForm<%=i%>" class="textForm">
+              <input type="text" id="textInput<%=i%>" name="textInput<%=i%>" placeholder="Enter text">
+              <button type="submit">Convert</button>
+            </form>
             </div>
-
-            <% if(e.imageBase64) {%>
-
-            <img
-              src="data:<%= e.contentType %>;base64,<%= e.imageBase64 %>"
-              height="150"
-              width="200"
-              style="margin: 15px"
-            />
-
-            <% } %>
-          </div>
-          <div class="btns" style="margin-top: 10px; align-items: center">
-            <!-- like button -->
-              <div class="dropdown">
-                <button class="like-btn" onclick="likePost('<%= e.id %>')">
-                  <i class="far fa-thumbs-up"></i>
-                </button>
-              </div>
-
-            <!-- comment button -->
-            <div class="dropdown">
-              <a
-                class="like-btn"
-                href="/comment/<%= e.slug %>/<%= e.blogNumber %>/<%= profile.slugName %>"
-                style="margin-left: 5px"
-                ><i class="far fa-comment"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-        <%})%>
+       <%}%>
       </div>
-      <div>
-        <div class="protfolio">
-          <p style="font-weight: 600; margin-bottom: 20px">
-            Write on Blog site
-          </p>
-          <p>Grow your readship</p>
-          <p style="margin-bottom: 20px">Improve your writing skills</p>
-          <a
-            href="/new-article/create/<%= profile.slugName%>"
-            style="
-              border: 2px solid white;
-              padding: 7px;
-              border-radius: 10px;
-              text-decoration: none;
-              color: black;
-            "
-            >Start writing</a
-          >
-        </div>
-        <div class="protfolio" style="text-align: center; background: white">
-          <h1 style="font-weight: 400; font-size: 2.2rem">Follow us on</h1>
-          <a href="https://github.com/vihankochatta49/Blogs-work" target='_blank' style="text-decoration:none;font-size: 2.8em; margin-right: 20px; color: #171517"
-            ><i class="fab fa-github"></i></a>
-          <a
-            href="https://www.linkedin.com/in/vihan-kochatta-179606223/" target='_blank'
-            style="text-align: center; font-size: 2.8em; color: #0e76a8; text-decoration:none;"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-        </div>  
       </div>
-        
-      </div>
+    </div>
     </section>
-    <script>
-      function likePost(id) {
-        var totalLikes = document.getElementById(`${id}`);
-        fetch(`/like/post/${id}`, {
-          method: "PUT",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: {
-            postId: id,
-          },
-        })
-          .then((res) => res.json())
-          .then((result) => {
-            totalLikes.innerHTML = result.likes;
-          });
+   
+      
+     <!-- API to generate images -->
+      <script>
+        async function query(data) {
+          const response = await fetch(
+            "https://xdwvg9no7pefghrn.us-east-1.aws.endpoints.huggingface.cloud",
+            {
+              headers: {
+                "Accept": "image/png",
+                "Authorization": "Bearer VknySbLLTUjbxXAXCjyfaFIPwUTCeRXbFSOjwRiCxsxFyhbnGjSFalPKrpvvDAaPVzWEevPljilLVDBiTzfIbWFdxOkYJxnOPoHhkkVGzAknaOulWggusSFewzpqsNWM",
+                "Content-Type": "application/json"
+              },
+              method: "POST",
+              body: JSON.stringify(data),
+            }
+          );
+          const result = await response.blob();
+          return result;
+        }
+      </script>
+
+      <!-- displaying images -->
+      <script>
+        document.getElementById('textForm0').addEventListener('submit', async function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const inputText = document.getElementById('textInput0').value;
+
+      try {
+        const imageBlob = await query({ "inputs": inputText });
+        console.log(imageBlob);
+
+        // Display the image to the user
+        const imageUrl = URL.createObjectURL(imageBlob);
+        const imageElement = document.createElement('img');
+        imageElement.src = imageUrl;
+
+        const imageContainer = document.getElementById('imageContainer0');
+        imageContainer.innerHTML = ''; // Clear previous content
+        imageContainer.appendChild(imageElement);
+      } catch (error) {
+        console.error('Error:', error);
       }
-    </script>
+    });
+      
+    document.getElementById('textForm1').addEventListener('submit', async function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const inputText = document.getElementById('textInput1').value;
+
+      try {
+        const imageBlob = await query({ "inputs": inputText });
+        console.log(imageBlob);
+
+        // Display the image to the user
+        const imageUrl = URL.createObjectURL(imageBlob);
+        const imageElement = document.createElement('img');
+        imageElement.src = imageUrl;
+
+        const imageContainer = document.getElementById('imageContainer1');
+        imageContainer.innerHTML = ''; // Clear previous content
+        imageContainer.appendChild(imageElement);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    });
+
+    document.getElementById('textForm2').addEventListener('submit', async function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const inputText = document.getElementById('textInput2').value;
+
+      try {
+        const imageBlob = await query({ "inputs": inputText });
+        console.log(imageBlob);
+
+        // Display the image to the user
+        const imageUrl = URL.createObjectURL(imageBlob);
+        const imageElement = document.createElement('img');
+        imageElement.src = imageUrl;
+
+        const imageContainer = document.getElementById('imageContainer2');
+        imageContainer.innerHTML = ''; // Clear previous content
+        imageContainer.appendChild(imageElement);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    });
+
+    document.getElementById('textForm3').addEventListener('submit', async function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const inputText = document.getElementById('textInput3').value;
+
+      try {
+        const imageBlob = await query({ "inputs": inputText });
+        console.log(imageBlob);
+
+        // Display the image to the user
+        const imageUrl = URL.createObjectURL(imageBlob);
+        const imageElement = document.createElement('img');
+        imageElement.src = imageUrl;
+
+        const imageContainer = document.getElementById('imageContainer3');
+        imageContainer.innerHTML = ''; // Clear previous content
+        imageContainer.appendChild(imageElement);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    });
+
+    document.getElementById('textForm4').addEventListener('submit', async function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const inputText = document.getElementById('textInput4').value;
+
+      try {
+        const imageBlob = await query({ "inputs": inputText });
+        console.log(imageBlob);
+
+        // Display the image to the user
+        const imageUrl = URL.createObjectURL(imageBlob);
+        const imageElement = document.createElement('img');
+        imageElement.src = imageUrl;
+
+        const imageContainer = document.getElementById('imageContainer4');
+        imageContainer.innerHTML = ''; // Clear previous content
+        imageContainer.appendChild(imageElement);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    });
+
+    document.getElementById('textForm5').addEventListener('submit', async function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const inputText = document.getElementById('textInput5').value;
+
+      try {
+        const imageBlob = await query({ "inputs": inputText });
+        console.log(imageBlob);
+
+        // Display the image to the user
+        const imageUrl = URL.createObjectURL(imageBlob);
+        const imageElement = document.createElement('img');
+        imageElement.src = imageUrl;
+
+        const imageContainer = document.getElementById('imageContainer5');
+        imageContainer.innerHTML = ''; // Clear previous content
+        imageContainer.appendChild(imageElement);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    });
+
+    document.getElementById('textForm6').addEventListener('submit', async function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const inputText = document.getElementById('textInput6').value;
+
+      try {
+        const imageBlob = await query({ "inputs": inputText });
+        console.log(imageBlob);
+
+        // Display the image to the user
+        const imageUrl = URL.createObjectURL(imageBlob);
+        const imageElement = document.createElement('img');
+        imageElement.src = imageUrl;
+
+        const imageContainer = document.getElementById('imageContainer6');
+        imageContainer.innerHTML = ''; // Clear previous content
+        imageContainer.appendChild(imageElement);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    });
+
+    document.getElementById('textForm7').addEventListener('submit', async function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const inputText = document.getElementById('textInput7').value;
+
+      try {
+        const imageBlob = await query({ "inputs": inputText });
+        console.log(imageBlob);
+
+        // Display the image to the user
+        const imageUrl = URL.createObjectURL(imageBlob);
+        const imageElement = document.createElement('img');
+        imageElement.src = imageUrl;
+
+        const imageContainer = document.getElementById('imageContainer7');
+        imageContainer.innerHTML = ''; // Clear previous content
+        imageContainer.appendChild(imageElement);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    });
+
+    document.getElementById('textForm8').addEventListener('submit', async function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const inputText = document.getElementById('textInput8').value;
+
+      try {
+        const imageBlob = await query({ "inputs": inputText });
+        console.log(imageBlob);
+
+        // Display the image to the user
+        const imageUrl = URL.createObjectURL(imageBlob);
+        const imageElement = document.createElement('img');
+        imageElement.src = imageUrl;
+
+        const imageContainer = document.getElementById('imageContainer8');
+        imageContainer.innerHTML = ''; // Clear previous content
+        imageContainer.appendChild(imageElement);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    });
+
+    document.getElementById('textForm9').addEventListener('submit', async function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const inputText = document.getElementById('textInput9').value;
+
+      try {
+        const imageBlob = await query({ "inputs": inputText });
+        console.log(imageBlob);
+
+        // Display the image to the user
+        const imageUrl = URL.createObjectURL(imageBlob);
+        const imageElement = document.createElement('img');
+        imageElement.src = imageUrl;
+
+        const imageContainer = document.getElementById('imageContainer9');
+        imageContainer.innerHTML = ''; // Clear previous content
+        imageContainer.appendChild(imageElement);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    });
+      </script>
+    
   </body>
 </html>

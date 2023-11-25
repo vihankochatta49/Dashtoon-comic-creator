@@ -3,7 +3,6 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 const rM = require(".././routes/registerModels");
-const a = require(".././routes/models");
 
 // saving register data to db (post route)
 router.post("/register", (req, res) => {
