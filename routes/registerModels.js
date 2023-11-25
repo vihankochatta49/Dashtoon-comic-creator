@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema({
 
 userSchema.pre("validate", function (next) {
   if (this.name) {
-    this.slugName = slugify(this.name); //slugify user name
+    this.slugName = slugify(this.name); //slugify user-name
   }
   next();
 });
